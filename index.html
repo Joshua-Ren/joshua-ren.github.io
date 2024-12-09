@@ -95,23 +95,38 @@
         <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
 			Hey, I am a Ph.D. (2020-now) student who is working on machine learning under the supervision of 
 			<a href="https://djsutherland.ml/">Prof. Danica J. Sutherland</a> at the University of British Columbia (UBC). 
-			 I am trying to figure out how to train a model that generalizes well systematically. 
+			 I am trying to figure out how to train a model that generalizes well systematically and why good models follow Occam's Razor naturally. 
 		         This idea originates from my master's study at the University of Edinburgh (2018-2019) with
 			<a href="https://scholar.google.com/citations?user=5_9v0CIAAAAJ">Prof. Simon Kirby</a> and
 			<a href="https://homepages.inf.ed.ac.uk/scohen/">Prof. Shay Cohen</a>.	
 			We find that not only humans, but the neural network might also prefer the highly compositional mapping when trained under different tasks. 
-		        Such a preference might make the learned representations become more compositional if we train the model iteratively. 
-		        To further explore this interesting phenomenon, I visited 
-		        <a href="https://scholar.google.com/citations?user=km6CP8cAAAAJ&hl=en"> Prof. Aaron Courville's</a> group at
+		        Such a <b>simplicity bias</b> would be gradually amplified if one intelligent agent keeps learning from the data 
+		        and experience of its predecessors, which is the core claim of Bayesian-iterated learning (Bayesian-IL) in cognitive science.
+		        The exploration of this interesting framework leads to two lines of my previous research. <br>
+
+		        First, I tried extending the iterated learning framework to more general deep learning systems, 
+		        starting from an emergent communication setting (a 2-agent cooperating RL game) to more general representation learning problems 
+		        (including vision, language, or even molecular graphs). 
+		        During the visit of 
+			<a href="https://scholar.google.com/citations?user=km6CP8cAAAAJ&hl=en"> Prof. Aaron Courville's</a> group at 
 		        <a href="https://mila.quebec/en/">Mila</a>,
-		        during which we find that "soft discretization" might play an important role. 
-		        In the remainder of my Ph.D. study, 
-		        I hope we can build a theoretical model to explain the aforementioned preference during neural network training, 
-		        and also design more efficient algorithms for real applications.
-		        Recently, I surprisingly found that the Bayesian iterated learning framework 
-		        (a hypothetic framework depicting human cultural evolution used in cognitive science) 
-		        has the potential to approximate the behavior of the evolution of large language models (LLMs).
-		        Hope this theoretical framework can bring valuable insights to the LLM era!
+		        we found that a bottleneck in the network structure plays an important role in introducing implicity bias,
+		        which would be amplified during multi-generation self-play. 
+		        Furthermore, our recent work also demonstrates that Bayesian-IL explains the LLM's evolution in ubiquitous self-play to some extent. <br>
+
+			Another line of work focuses more on "where this simplicity bias comes from". 
+		        One theoretical tool we apply here is <b>learning dynamics</b>, 
+		        which describes how the model's prediction changes when it learns from another sample. 
+		        We applied the learning dynamics to explain many interesting learning behaviors in deep learning, 
+		        e.g., finding better supervisor signals, designing finetuning heads, LLM's finetuning, etc. 
+		        We also surprisingly find that the self-preference amplification and simplicity bias are ubiquitous in GD-based learning systems. <br>
+
+		        Besides this microcosmic inspection of the learning process, 
+		        I recently felt interested in using compression theory and Kolmogorov complexity-related theory to give a
+		        macroscopical view of simplicity bias. I believe the mechanisms behind these concepts, e.g., 
+		        Occam's Razor, the Platonic hypothesis, learning-speed advantage, systematic generalization, etc., 
+		        might resemble some important facts about our learning theory and would like to explore more in this interesting direction.
+
         </p>
 	<p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
 		<font color="#DC143C"> [News] </font> We are going to have an interesting workshop on <a href="https://language-gamification.github.io/" >Language Gamification</a> 
