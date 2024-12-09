@@ -144,22 +144,32 @@
 	First, I tried extending the iterated learning framework to more general deep learning systems, 
 	starting from an emergent communication setting (a 2-agent cooperating RL game, in Ren et.al ICLR2020) to more general representation learning problems 
 	(including vision, language, or even molecular graphs, in Ren et.al NeurIPS2023). 
-	During the visit of 
+	The latter is accomplished during my visit to 
 	<a href="https://scholar.google.com/citations?user=km6CP8cAAAAJ&hl=en"> Prof. Aaron Courville's</a> group at 
 	<a href="https://mila.quebec/en/">Mila</a>,
-	we found that a bottleneck in the network structure plays an important role in introducing implicity bias,
-	which would be amplified during multi-generation self-play. 
-	Furthermore, our recent work also demonstrates that Bayesian-IL explains the LLM's evolution in ubiquitous self-play to some extent (in Ren et.al NeurIPS2024). <br><br>
+	in which we found that a bottleneck in the network structure plays an important role in introducing implicity bias.
+	Such a bias would then be further amplified during multi-generation self-play. 
+	Furthermore, our recent work also demonstrates that Bayesian-IL explains the LLM's evolution in ubiquitous self-play to some extent (in Ren et.al NeurIPS2024),
+	which not only explains why specific phenomenons like diversity decrease, hidden bias amplification, etc., would occur in many self-improvement methods
+	but also provides a hint on how could we mitigate that -- design a good interaction phase that restrains the bias we don't want. <br><br>
 
-	Another line of work focuses more on "where this simplicity bias comes from". 
+	Another line of work, which I currently pay more attention to,
+	focuses on "where this simplicity bias comes from". 
 	One theoretical tool we apply here is <b>learning dynamics</b>, 
-	which describes how the model's prediction changes when it learns from another sample. 
-	We applied the learning dynamics to explain many interesting learning behaviors in deep learning, 
-	e.g., finding better supervisor signals (Ren et.al ICLR2022), designing finetuning heads (Ren et.al ICLR2023), LLM's finetuning (Ren et.al ICLR2025), etc. 
-	We also surprisingly find that the self-preference amplification and simplicity bias are ubiquitous in GD-based learning systems (Ren et.al CompLearn@NeurIPS2024). <br><br>
+	which describes how the model's prediction changes when it learns from another sample.
+	This tool can help us embody the simplicity bias to a concrete measurement: learning speed or compression rate.
+	Since our model can never learn all the possible data in one shot,
+	it must gather new knowledge sample by sample.
+	If the learning of each individual example helps the model provide more correct predictions on other samples,
+	the training curve of this learning process would decay very fast,
+	which means this model might have a higher compression ratio (as mentioned in this talk about
+	<a href="https://www.youtube.com/watch?v=dO4TPJkeaaU">Compression for AGI</a> ).
+	We also applied the learning dynamics to explain many interesting learning behaviors in deep learning, 
+	e.g., finding better supervisor signals (Ren et.al ICLR2022), designing finetuning heads (Ren et.al ICLR2023), and LLM's finetuning (Ren et.al ICLR2025), etc. 
+	We surprisingly find that the self-preference amplification and simplicity bias are ubiquitous in GD-based learning systems (Ren et.al CompLearn@NeurIPS2024). <br><br>
 
 	Besides this microcosmic inspection of the learning process, 
-	I recently felt interested in using compression theory and Kolmogorov complexity-related theory to give a
+	I recently realized that using compression theory and Kolmogorov complexity-related theory gives a more
 	macroscopical view of simplicity bias. I believe the mechanisms behind these concepts, e.g., 
 	Occam's Razor, the 
 	<a href="https://phillipi.github.io/prh/"> Platonic Representation Hypothesis </a>
