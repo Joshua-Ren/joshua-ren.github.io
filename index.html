@@ -128,35 +128,41 @@
     <h2>Intro. of My Research</h2>
     <p class="w3-justify">
         I am trying to figure out how to train a model that generalizes well systematically and why good models follow Occam's Razor naturally. 
-	This idea originates from a talk given by Professor Simon Kirby on how the compressibility and expressivity pressures guide human language
+	This idea originates from a 
+	<a href="https://cocosci.princeton.edu/tom/papers/IteratedLearningEvolutionLanguage.pdf"> talk </a>
+	given by Professor Simon Kirby on how the compressibility and expressivity pressures guide human language
 	to evolve in a more compositional direction.
 	We find that not only humans, but the neural network might also prefer the highly compositional mapping when trained under different tasks. 
 	Such a <b>simplicity bias</b> would be gradually amplified if one intelligent agent keeps learning from the data 
-	and experience of its predecessors, which is the core claim of Bayesian-iterated learning (Bayesian-IL) in cognitive science.
-	The exploration of this interesting framework leads to two lines of my previous research. <br>
+	and experience of its predecessors, which is the core claim of 
+	<a href="https://cocosci.princeton.edu/tom/papers/iteratedcogsci.pdf"> Bayesian-iterated learning </a>
+	(Bayesian-IL) in cognitive science.
+	The exploration of this interesting framework leads to two lines of my previous research. <br><br>
 
 	First, I tried extending the iterated learning framework to more general deep learning systems, 
-	starting from an emergent communication setting (a 2-agent cooperating RL game) to more general representation learning problems 
-	(including vision, language, or even molecular graphs). 
+	starting from an emergent communication setting (a 2-agent cooperating RL game, in Ren et.al ICLR2020) to more general representation learning problems 
+	(including vision, language, or even molecular graphs, in Ren et.al NeurIPS2023). 
 	During the visit of 
 	<a href="https://scholar.google.com/citations?user=km6CP8cAAAAJ&hl=en"> Prof. Aaron Courville's</a> group at 
 	<a href="https://mila.quebec/en/">Mila</a>,
 	we found that a bottleneck in the network structure plays an important role in introducing implicity bias,
 	which would be amplified during multi-generation self-play. 
-	Furthermore, our recent work also demonstrates that Bayesian-IL explains the LLM's evolution in ubiquitous self-play to some extent. <br><br>
+	Furthermore, our recent work also demonstrates that Bayesian-IL explains the LLM's evolution in ubiquitous self-play to some extent (in Ren et.al NeurIPS2024). <br><br>
 
 	Another line of work focuses more on "where this simplicity bias comes from". 
 	One theoretical tool we apply here is <b>learning dynamics</b>, 
 	which describes how the model's prediction changes when it learns from another sample. 
 	We applied the learning dynamics to explain many interesting learning behaviors in deep learning, 
-	e.g., finding better supervisor signals, designing finetuning heads, LLM's finetuning, etc. 
-	We also surprisingly find that the self-preference amplification and simplicity bias are ubiquitous in GD-based learning systems. <br><br>
+	e.g., finding better supervisor signals (Ren et.al ICLR2022), designing finetuning heads (Ren et.al ICLR2023), LLM's finetuning (Ren et.al ICLR2025), etc. 
+	We also surprisingly find that the self-preference amplification and simplicity bias are ubiquitous in GD-based learning systems (Ren et.al CompLearn@NeurIPS2024). <br><br>
 
 	Besides this microcosmic inspection of the learning process, 
 	I recently felt interested in using compression theory and Kolmogorov complexity-related theory to give a
 	macroscopical view of simplicity bias. I believe the mechanisms behind these concepts, e.g., 
-	Occam's Razor, the Platonic hypothesis, learning-speed advantage, systematic generalization, etc., 
-	might resemble some important facts about our learning theory and would like to explore more in this interesting direction.
+	Occam's Razor, the 
+	<a href="https://phillipi.github.io/prh/"> Platonic hypothesis </a>
+	, learning-speed advantage, systematic generalization, etc., 
+	might resemble some important facts about our learning theory, and would like to explore more in this interesting direction.
     </p>
   </div>
 
