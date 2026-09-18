@@ -41,7 +41,10 @@
   /* Publications: venue badge, topic colour coding, topic filter */
   #publications em {font-style: normal; font-weight: 700; color: #0b2545; background: #eaf1fa; padding: 1px 8px; border-radius: 10px; font-size: 0.9em;}
   #publications ol {list-style: none; padding-left: 0; margin: 0;}
-  #publications ol > li {padding: 2px 0 2px 14px; margin-bottom: 18px; border-left: 3px solid #c9d1d9;}
+  #publications ol > li {position: relative; padding: 2px 0 2px 28px; margin-bottom: 18px; border-left: 3px solid #c9d1d9;}
+  /* Featured papers: add data-star to an entry to mark it */
+  #publications li[data-star]::before {content: "\2605"; position: absolute; left: 9px; top: 3px;
+    color: #e0a92a; font-size: 12px;}
   #publications li[data-topic^="dynamics"] {border-left-color: #1772d0;}
   #publications li[data-topic^="rl"] {border-left-color: #0f9d8f;}
   #publications li[data-topic^="il"] {border-left-color: #7b5ea7;}
@@ -113,7 +116,7 @@
 <body class="w3-content" style="max-width:1000px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-collapse w3-top w3-right" style="z-index:3;width:150px" id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-black w3-collapse w3-top w3-right" style="z-index:3;width:175px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <h3><b>YI REN</b></h3>
   </div>
@@ -140,7 +143,7 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:150px">
+<div class="w3-main" style="margin-left:175px">
 
   <!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
@@ -318,7 +321,7 @@
     <div class="pub-group">
       <h4>Preprints:</h4>
       <ol>
-        <li data-topic="dynamics">
+        <li data-topic="dynamics" data-star>
           <strong>Learning Dynamics of Continual Learning: A Unified View of Data Attribution, Forgetting, and Plasticity Loss</strong>
           <br>
           <strong>Yi Ren</strong>, Wenlong Deng, Guanzhe Hong, CL, Yarin Gal
@@ -344,7 +347,7 @@
     <div class="pub-group">
       <h4>Journal and Low-Acceptance-Rate Conference Papers:</h4>
       <ol>
-        <li data-topic="rl">
+        <li data-topic="rl" data-star>
           <strong>On Group Relative Policy Optimization Collapse in Agent Search: The Lazy Likelihood-Displacement</strong>
           <br>
           Wenlong Deng, Yushu Li, Boying Gong, <strong>Yi Ren</strong>, Boying Gong, Christos Thrampoulidis, Xiaoxiao Li
@@ -371,7 +374,7 @@
           <a href="https://arxiv.org/pdf/2505.18830?">pdf</a>
         </li>
 
-        <li data-topic="dynamics">
+        <li data-topic="dynamics" data-star>
           <strong>Learning Dynamics of LLM Finetuning</strong>
           <br>
           <strong>Yi Ren</strong>, Danica J. Sutherland
@@ -383,7 +386,7 @@
           <a href="data/Learning_dynamics_NOV_share.pdf">slides</a>
         </li>
 
-        <li data-topic="il">
+        <li data-topic="il" data-star>
           <strong>Bias Amplification in Language Model Evolution: An Iterated Learning Perspective</strong>
           <br>
           <strong>Yi Ren</strong>, Shangmin Guo, Linlu Qiu, Bailin Wang, Danica J. Sutherland
@@ -472,7 +475,7 @@
     <div class="pub-group">
       <h4>Ph.D. Thesis:</h4>
       <ol>
-        <li data-topic="dynamics">
+        <li data-topic="dynamics" data-star>
           <strong>Learning Dynamics of Deep Learning--Force Analysis of Deep Neural Networks</strong>
           <br>
           <strong>Yi Ren</strong>, Supervised by Danica J. Sutherland
