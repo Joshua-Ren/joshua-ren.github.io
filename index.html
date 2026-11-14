@@ -51,6 +51,7 @@
   #publications li[data-topic^="dynamics"] {border-left-color: #1772d0;}
   #publications li[data-topic^="rl"] {border-left-color: #0f9d8f;}
   #publications li[data-topic^="il"] {border-left-color: #7b5ea7;}
+  #publications li[data-topic^="safety"] {border-left-color: #b5446e;}
   #publications li[data-topic^="other"] {border-left-color: #9aa5b1;}
 
   #pub-filters {margin: 14px 0 8px;}
@@ -65,6 +66,7 @@
   #pub-filters .dot-dynamics {background: #1772d0;}
   #pub-filters .dot-rl {background: #0f9d8f;}
   #pub-filters .dot-il {background: #7b5ea7;}
+  #pub-filters .dot-safety {background: #b5446e;}
   #pub-filters .dot-other {background: #9aa5b1;}
 
   /* Section headings */
@@ -207,7 +209,7 @@
     <p>
       Most of my work is built on <b>learning dynamics</b>: looking at how a model's prediction on one example
       changes when it learns from another. This turns loose notions like <b>simplicity bias</b> into quantities
-      we can actually measure &mdash; learning speed, compression rate &mdash; and makes a lot of otherwise
+      we can actually measure, such as learning speed and compression rate, and makes a lot of otherwise
       puzzling training behaviour tractable.
     </p>
     <p>
@@ -220,18 +222,25 @@
     </p>
     <p>
       I suspect these observations point at something more general: that compression and Occam's Razor are not
-      merely descriptions of good models, but constraints on how learning has to work &mdash; a view put nicely
+      merely descriptions of good models, but constraints on how learning has to work, a view put nicely
       in this talk on <a href="https://www.youtube.com/watch?v=dO4TPJkeaaU">Compression for AGI</a>.
     </p>
 
-    <h3>Now: forgetting and continual learning</h3>
+    <h3>Now: continual learning, and the safety of self-improving systems</h3>
     <p>
       Lifelong (continual) learning lets AI systems keep adapting as new knowledge becomes available. Because
       learning inevitably interacts with what a model already knows, getting there requires a principled account
-      of the different forms of forgetting &mdash; catastrophic forgetting, intentional unlearning, and
+      of the different forms of forgetting, including catastrophic forgetting, intentional unlearning, and
       time-dependent forgetting. We are working to uncover the mechanisms behind these phenomena across
-      different learning algorithms and to bring them under one analytical framework, ultimately making such
-      systems safer, more efficient and more capable.
+      different learning algorithms and to bring them under one analytical framework.
+    </p>
+    <p>
+      The question gets sharper once a system starts improving itself. I have become increasingly interested in
+      the safety of <b>recursive self-improvement</b>: when each round of training is shaped by the model's own
+      outputs, small biases compound, and properties we care about, safety alignment among them,
+      can erode without any single update looking wrong. My earlier work on iterated learning already found this
+      compounding in repeated self-play; what I want now is to say when it becomes dangerous, and which levers
+      actually hold it in check.
     </p>
 
     <h3>Earlier: iterated learning</h3>
@@ -320,6 +329,7 @@
       <button type="button" onclick="filterPubs('dynamics', this)"><span class="dot dot-dynamics"></span>Learning Dynamics</button>
       <button type="button" onclick="filterPubs('rl', this)"><span class="dot dot-rl"></span>RL Post-training</button>
       <button type="button" onclick="filterPubs('il', this)"><span class="dot dot-il"></span>Iterated Learning</button>
+      <button type="button" onclick="filterPubs('safety', this)"><span class="dot dot-safety"></span>AI Safety</button>
       <button type="button" onclick="filterPubs('other', this)"><span class="dot dot-other"></span>Others</button>
     </div>
     <p class="pub-note"><sup>*</sup> Equal contribution &nbsp;&nbsp; <span class="pub-note-star">&#9733;</span> Selected</p>
@@ -330,11 +340,28 @@
         <li data-topic="dynamics" data-star>
           <strong>Learning Dynamics of Continual Learning: A Unified View of Data Attribution, Forgetting, and Plasticity Loss</strong>
           <br>
-          <strong>Yi Ren</strong>, Wenlong Deng, Guanzhe Hong, CL, Yarin Gal
+          <strong>Yi Ren</strong>, Wenlong Deng, Guanzhe Hong, Clare Lyle, Yarin Gal
           <br>
           <em>arXiv preprint</em> 2026 |
           <a href="https://github.com/Joshua-Ren/learning-dynamics-cl">code</a> |
           <a href="https://joshua-ren.github.io/learning-dynamics-cl/">page</a>
+        </li>
+
+        <li data-topic="dynamics">
+          <strong>Learning Dynamics of On-Policy Distillation</strong>
+          <br>
+          Guan Zhe Hong, Sumeet Ramesh Motwani, Liang Chen, Yangchen Pan, Junchi Yu, Jialin Yu, Philip Torr, <strong>Yi Ren</strong>
+          <br>
+          <em>arXiv preprint</em> 2026 |
+          <a href="https://arxiv.org/pdf/2611.08016">pdf</a>
+        </li>
+
+        <li data-topic="dynamics safety">
+          <strong>Dual-Null LoRA: A Training Dynamics Approach to Preserving Safety Alignment</strong>
+          <br>
+          Markus Hisch, <strong>Yi Ren</strong>, Yarin Gal, Lin Li
+          <br>
+          <em>Preprint</em> 2026, under review
         </li>
       </ol>
     </div>
@@ -342,6 +369,16 @@
     <div class="pub-group pub-conf">
       <h4>Journal and Low-Acceptance-Rate Conference Papers:</h4>
       <ol>
+        <li data-topic="rl">
+          <strong>Preserving Exploration for LLM Reasoning via Mean Order-Statistic Alignment</strong>
+          <br>
+          Ruotian Peng, <strong>Yi Ren</strong>, Long-Fei Li, Yandong Wen
+          <br>
+          <em>NeurIPS</em> 2026 |
+          <a href="https://openreview.net/pdf?id=G3nrmCAXwT">pdf</a> |
+          <a href="https://openreview.net/forum?id=G3nrmCAXwT">openreview</a>
+        </li>
+
         <li data-topic="rl">
           <strong>Beyond the Sampled Token: Preserving Candidate Support in RLVR</strong>
           <br>
